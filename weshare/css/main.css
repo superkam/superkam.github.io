@@ -1,0 +1,28 @@
+body {
+	color: #4A4A4A;
+	font-family: "Arial", "Helvetica", "Hei";
+	font-size: 12px;
+	line-height:23px;
+	margin:auto;
+}
+
+div {
+	margin-top: 20px;
+}
+
+.container {
+	margin-left:20px;
+	margin-right:20px;
+}
+
+.important {
+	color: #FF8500;
+}
+
+.img_div {
+	text-align:center;
+}
+img {
+	border:none;
+	margin-bottom:10px;
+}
