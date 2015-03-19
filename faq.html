@@ -1,0 +1,477 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<style>
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+}
+</style>
+<title>微享+ 常见问题（FAQ）</title>
+<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax:{inlineMath:[['$$$','$$$']]}});</script><script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+<body>
+<h1>微享+ 常见问题（FAQ）</h1>
+
+<p>Hello，这里是 [微享+] 这个app的常见问题页面。关于这个app经常被问起的问题，都会在这个页面统一地回答。如果您也有关于 [微享+] 的问题，可以通过app里的“联系我们”按钮提交意见，或是直接通过邮件：<a href="mailto:beebyteapp@gmail.com">beebyteapp@gmail.com</a> 和我们联系。谢谢！</p>
+
+<hr />
+
+<ul>
+<li><p>[微享+] 是个什么样的东东？</p>
+
+<p>  这是一个可以一键分享微信朋友圈和新浪微博的 iPhone 端轻工具。以后，它应该会加入一些更利于分享信息的功能和特性，最终成为一个“信息分享的整合器”。</p></li>
+</ul>
+
+
+<hr />
+
+<ul>
+<li><p>[微享+] 可以在什么设备上使用？对固件有什么要求吗？</p>
+
+<p>  [微享+] 是一个基于 iOS 系统的工具类app，在 iPhone 和 iPad 上都可以运行。1.0版需要安装 iOS 8 以上的固件，而即将更新的1.0.1版就可以支持 iOS 7 以上固件啦。对了，如果你要正常使用微享进行分享，设备上得先安装好微信的客户端 app 才行。</p></li>
+</ul>
+
+
+<hr />
+
+<ul>
+<li><p>[微享+] 会出安卓的版本吗？</p>
+
+<p>  目前暂时还不会，主要我们精力有限呐，先做好 iOS 版的再说！</p></li>
+</ul>
+
+
+<hr />
+
+<ul>
+<li><p>[微享+] 会出 Mac 版吗？</p>
+
+<p>  回答同上一个问题。不过，Mac版的优先级要比安卓版的大一些吧！</p></li>
+</ul>
+
+
+<hr />
+
+<ul>
+<li><p>微信分享时为什么还要弹出微信对话框再粘贴一次啊，一键分享骗人的吧！</p>
+
+<p>  这位老师您别急，我解释一下哈。微博是一个相对开放一些的平台，一些接口都可以由第三方的 app 调用，所以在 微享+ 里编辑完分享到微博时，是非常流畅而且可以在后台操作的。但腾迅家的微信是一个相对封闭的平台，对于分享的权限，有着非常严格的限制。这也是为什么大部分的app都可以把内容转发到微信朋友圈，发过去之后一般都只是一个链接而已。在微信里发原生的图文信息的第三方 app，目前就咱们 微享+ 一个啊。</p></li>
+</ul>
+
+
+<hr />
+
+<ul>
+<li><p>最多可以贴几张图呢？</p>
+
+<p>  和新浪微博、微信朋友圈默认的设置一样，[微享+] 中目前支持9张图的贴图。</p></li>
+</ul>
+
+
+<hr />
+
+<ul>
+<li><p>编辑时文字可以写多长？</p>
+
+<p>  目前是：想写多长就写多长。不过我们还是建议您在其他编辑工具里先编写好再复制到 [微享+] 里进行分享。多保存总是没有错的。</p></li>
+</ul>
+
+
+<hr />
+
+<ul>
+<li><p>[微享+] 会支持除了微信、微博之外的其他社交分享服务吗？</p>
+
+<p>  大家的呼声很大啊，有很多朋友想要加入 Twitter 和 Facebook 的分享，也有要求加入 Instagram 和 Lofter 的摄影控，还有人要求加入陌陌和 QQ 空间的分享……嗯，We are working on it. 不过可以放心，分享的简洁性永远是我们第一考虑的。</p></li>
+</ul>
+
+
+<hr />
+
+<ul>
+<li><p>[微享+] 能做图文混排么？</p>
+
+<p>  目前还不行。：）</p></li>
+</ul>
+
+
+<hr />
+
+<ul>
+<li><p>我是应用类的小白，不知道应该怎么用 [微享+] 啊！</p>
+
+<p>  小白也可以成长啊！不能永远做小白啊！为什么一点进取心都没有呢！……不好意思我失态了。其实 [微享+] 很容易学会用的，第一次打开 app 时，就有几张大到你根本无法错过的大图说明了这个app的功能和特性了；如果用得不熟，还可以在 app 里点击右上角的三个点按钮，查看 app 的使用说明。当然最好的办法是：多用上几次，多发几条贴子，你大概就知道这是个什么样的 app 应该怎么用了。</p></li>
+</ul>
+
+
+<hr />
+
+<ul>
+<li><p>[微享+] 有什么更高级的功能拓展么？</p>
+
+<p>  哈哈，有啊！首先 [微享+] 可以支持 Launcher 这样的通知中心启动的功能，我们的 url 是“weshareplus://”，添加之后就可以使用 Launcher 调用啦。</p>
+
+<p>  另外也有一些其他的高冷功能在 调教ing，比如支持 Extension 之类，后期也会在新版本中推出的。</p></li>
+</ul>
+
+
+<hr />
+
+<ul>
+<li><p>可以存储已经分享过的图片文字么？</p>
+
+<p>  目前在 [微享+] 的编辑时，其实已经有一个存储草稿的功能了。哪怕编辑到一半退出 app，甚至关闭后台运行的程序，一样也会存储着编辑到一半的信息。我们的确在考虑着如何保存已经分享过的图文信息。目前如果你想存储这些信息的话，可以在微信或是新浪微博的原生程序中……其实也保存不了。朋友圈和微博默认都只能在线查看。</p></li>
+</ul>
+
+
+<hr />
+
+<ul>
+<li><p>压在图上的那个水印可以去掉吗？哪怕内购都可以啊！</p>
+
+<p>  可以啊！也不用内购啥的，1.0.1版已经增加了打开关闭水印的切换开关，在 app 的“设置”里可以具体切换。</p></li>
+</ul>
+
+
+<hr />
+
+<ul>
+<li><p>可以像微博或是朋友圈那样支持九宫格式的多张图吗？</p>
+
+<p>  这个么……臣妾还真滴做不到。微博的多图权限比较难申请，而微信的多图权限直接就不对外开放。其实如果习惯了手机浏览的上下滑动的方式，长图的浏览也很方便的，不是吗？</p></li>
+</ul>
+
+
+<hr />
+
+<ul>
+<li><p>开发 [微享+] 的是什么人呐？</p>
+
+<p>  呃，这个么，在 [微享+] 的“关于微享+”的页面里，有我们的简单介绍。如果想联系（约）我们，可以通过 [微享+] 里的“联系我们”按钮邮件联系。</p></li>
+</ul>
+
+
+<hr />
+
+<ul>
+<li><p>我想编辑图片，裁剪加滤镜什么的，[微享+] 可以实现吗？</p>
+
+<p>  [微享+] 是个以快速分享信息到社交平台为目的的轻工具，图片编辑修改类的 app 已经多得数不胜数，甚至在系统自带的相册里都可以进行的，我们就不再做到 [微享+] 里啦，毕竟 app 的简洁纯粹是我们更加看重的。</p></li>
+</ul>
+
+
+<hr />
+
+<ul>
+<li><p>编辑长文字时，可以设置文字的格式吗？</p>
+
+<p>  目前还不行。对了，提这个要求的朋友，您经常在手机端写大段大段的文字么？</p></li>
+</ul>
+
+
+<hr />
+
+<ul>
+<li><p>可以切换不同的微信、微博账号吗？</p>
+
+<p>  [微享+] 的发送需要微信的验证授权，所以切换不同的账号可以在微信 app 里进行，之后 [微享+] 发出的分享就会以最新登陆的账号发出了。要切换微博账号，可以在 [微享+] 的设置里注销已绑定的账号，然后以另外的账号重新登陆。</p></li>
+</ul>
+
+</body>
+</html>
